@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>VPet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/css/diary.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <h1>Create diary</h1>
+        <div class="fadeIn first">
+            <img src="static/img/pet_logo.png" height="120" width="98"/>
+        </div>
+        <form action="" method="post" autocomplete="off">
+            <input type="text"
+                   id="name"
+                   class="fadeIn second"
+                   name="name"
+                   placeholder="Name"
+                   value="{{request.form.diary }}">
+
+            <input type="submit" class="fadeIn fourth" value="Create">
+        </form>
+          {% if error %}
+        <p><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
+
+        <div id="formFooter">
+            <p>Welcome</p>
+        </div>
+
+    </div>
+</div>
+</body>
+
+</html>

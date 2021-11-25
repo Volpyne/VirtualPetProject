@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>VPet</title>
+    <link href="static/css/start.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<div class="box">
+    <h1>Hello!</h1>
+    <button class="feedMe" onclick="feedMe()">Feed me!</button>
+    <button class="start" onclick="startE()">Start</button>
+    <button class="back" onclick="backE()">Back</button>
+    <!--<button class="diary" onclick="diary()">Diary</button>
+    <button class="diaryEx" onclick="diaryEx()">DiaryEx</button>-->
+    <!--<a href="/diary">diary</a>-->
+    <a class="button" href="{{ url_for('diary') }}">Diary</a>
+
+    <img src="static/img/pet.jpg" id="img-pet" height="400" width="600"/>
+    <p>Welcome</p>
+    <div>
+        {% for user in users %}
+            <p> {{ user }} </p>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+function feedMe() {
+  document.getElementById("img-pet").src="";
+    setTimeout(function(){ document.getElementById("img-pet").src="static/img/pet.jpg" }, 3000);
+}
+
+function startE() {
+  console.log("testing");
+  document.querySelector('.back').style.display = 'block';
+  document.querySelector(".start").style.display= "none";
+  document.getElementById("img-pet").src="static/img/pet_logo.png";
+
+}
+
+function backE() {
+  document.querySelector('.start').style.display = 'block';
+  document.querySelector(".back").style.display= "none";
+  document.getElementById("img-pet").src="static/img/pet.jpg";
+}
+
+function diary() {
+  //document.querySelector('.diaryEx').style.display = 'block';
+  //document.querySelector(".diary").style.display= "none";
+  //document.getElementById("img-pet").src="static/img/pet_logo.png";
+  window.location="diary.html";
+
+}
+
+function diaryEx() {
+  document.querySelector('.diary').style.display = 'block';
+  document.querySelector(".diaryEx").style.display= "none";
+  document.getElementById("img-pet").src="static/img/pet.jpg";
+}
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
+
+<!--<input type="submit" class="fadeIn fourth" value="Enter">-->

@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>VPet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/css/login.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <h1>VPet</h1>
+        <div class="fadeIn first">
+            <img src="static/img/pet_logo.png" height="120" width="98"/>
+        </div>
+        <!-- Login Form -->
+        <form action="" method="post" autocomplete="off">
+            <input type="text"
+                   id="login"
+                   class="fadeIn second"
+                   name="login"
+                   placeholder="Username"
+                   value="{{request.form.login }}">
+            <input type="text"
+                   id="password"
+                   class="fadeIn third"
+                   name="password"
+                   placeholder="Password"
+                   value="{{request.form.password }}">
+            <input type="submit" class="fadeIn fourth" value="Enter">
+        </form>
+        {% if error %}
+        <p><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
+
+        <div id="formFooter">
+            <a href="{{ url_for('register') }}">Register</a>
+            <p>Welcome</p>
+        </div>
+
+    </div>
+</div>
+</body>
+
+</html>
